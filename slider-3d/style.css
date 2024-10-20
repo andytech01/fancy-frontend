@@ -94,7 +94,7 @@
 .content h1 {
   font-size: 16em;
   line-height: 1em;
-  color: #25283b;
+  color: transparent;
   position: relative;
 }
 .content h1::after {
@@ -102,7 +102,7 @@
   inset: 0 0 0 0;
   content: attr(data-content);
   z-index: 2;
-  -webkit-text-stroke: 2px #d2d2d2;
+  -webkit-text-stroke: 3px #ffffff;
   color: transparent;
 }
 .content .author {
