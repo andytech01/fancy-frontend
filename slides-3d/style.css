@@ -18,6 +18,18 @@
     background-repeat: no-repeat;
     background-position: top center;
     pointer-events: none;
+
+    opacity: 0;
+    animation: fadeInBefore 2s ease-in-out forwards;
+  }
+
+  @keyframes fadeInBefore {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   .item {
@@ -162,15 +174,6 @@
   }
 }
 
-/* .item {
-  position: absolute;
-  inset: 0 0 0 0;
-  transform: rotateY(
-      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
-    )
-    translateZ(550px);
-} */
-
 .content {
   position: absolute;
   bottom: 0;
@@ -217,6 +220,20 @@
   background-repeat: no-repeat;
   background-position: top center;
   z-index: 1;
+  opacity: 0;
+  transform: translateY(100px);
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Stop animation on hover */
