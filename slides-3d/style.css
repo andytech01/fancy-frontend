@@ -42,10 +42,30 @@
     overflow: hidden;
     background-color: transparent;
     inset: 0 0 0 0;
+
+    opacity: 0;
     transform: rotateY(
         calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
       )
-      translateZ(500px);
+      translateZ(0) scale(0.5);
+    animation: fadeInZoomScale 2s ease-in-out forwards;
+  }
+
+  @keyframes fadeInZoomScale {
+    0% {
+      opacity: 0;
+      transform: rotateY(
+          calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+        )
+        translateZ(0) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateY(
+          calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+        )
+        translateZ(500px) scale(1);
+    }
   }
 
   .shadow-3d {
